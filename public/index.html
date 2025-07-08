@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shalom Chidi-Azuwike | Portfolio</title>
+    <link rel="shortcut icon" type="image/x-icon" href="asha.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+    <link href="assets/css/theme.css" rel="stylesheet">
+    <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        .profile-photo {
+            width: 200px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+           /*border: 3px solid #fff;*/
+            margin-bottom: 1rem;
+        }
+        .brand-logo {
+            padding: 2px; /* Space around the logo 
+            border-radius: 5px;  corners 
+            border: 1px solid #e0e0e0; /* Optional: light border for definition */
+        }
+        .ashl
+
+        .cisco-logo{
+            filter: invert(100%) hue-rotate(180deg);
+            }
+        .ieee-logo{
+            filter: invert(100%) hue-rotate(180deg);
+        }
+        .samsung-logo {
+            filter: invert(100%);
+             /* White background for Samsung logo */
+}
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 8px;
+            max-width: 800px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+        }
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #000;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .contact-form .form-control {
+            margin-bottom: 1rem;
+        }
+        .navbar-brand {
+            color: #ffffff !important;
+            font-size: 1.8rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .navbar-brand:hover {
+            color: #f0f0f0;
+        }
+        .nav-link {
+            color: #ffffff !important;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+        }
+        .nav-link:hover {
+            color: #f0f0f0 !important;
+        }
+        footer {
+            background-color: transparent;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        footer a {
+            color: #007bff;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #0056b3;
+        }
+        
+        .features-items {
+            background-color: transparent; /* White background for cards */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            transition: transform 0.3s ease; /* Smooth hover effect */
+        }
+        .features-items:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+        }
+        .features-items i {
+            color: #007bff; /* Bootstrap primary color for icons */
+        }
+        .features-items h5 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .scroll-buttons {
+            z-index: 1000; /* Ensure buttons appear above other content */
+        }
+        .scroll-btn {
+            size: 50px;
+            width: 10px;
+            height: 50px;
+            border-radius: 50%; /* Circular buttons */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #060068; /* Matches your CTA button color */
+            border: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .scroll-btn:hover {
+            background-color: #07029F; /* Matches your CTA hover color */
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+        .scroll-btn i {
+            color: #ffffff; /* White icons */
+            font-size: 1.2rem;
+        }
+        #projects img.w-100 {
+        border-radius: 15px;
+        object-fit: cover;
+        display: block;
+    }
+    
+    .phone-emulator {
+        position: relative;
+        padding: 40px 15px;
+        background: #000;
+        border-radius: 40px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .phone-emulator::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 5px;
+        background: #333;
+        border-radius: 5px;
+    }
+    
+    .phone-emulator img.w-100 {
+        border-radius: 10px;
+    }
+    
+    .website-emulator {
+        position: relative;
+        padding: 40px 20px 20px;
+        background: transparent;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .website-emulator::before {
+        content: '';
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        height: 20px;
+        background: linear-gradient(
+            to right,
+            #ff5f56 0%,
+            #ff5f56 10px,
+            #e0e0e0 10px,
+            #e0e0e0 20px,
+            #ffbd2e 20px,
+            #ffbd2e 30px,
+            #e0e0e0 30px,
+            #e0e0e0 40px,
+            #27c93f 40px,
+            #27c93f 50px,
+            #e0e0e0 50px
+        );
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+    
+    .website-emulator img.w-100 {
+        border-radius: 0 0 5px 5px;
+        border: 1px solid #ccc;
+    }
+    
+    @media (max-width: 767.98px) {
+        .phone-emulator, .website-emulator {
+            max-width: 100%;
+            padding: 20px 10px;
+        }
+        .website-emulator::before {
+            height: 15px;
+        }
+    }
+    </style>
+</head>
+<body>
+    <main class="main" id="top">
+        <!-- Navbar -->
+        <nav class="navbar navbar-light sticky-top" data-navbar-darken-on-scroll="900">
+            <div class="container pt-2">
+                <a href="index.html" class="navbar-brand">Shalom</a>
+                <div class="navbar-nav ms-auto d-flex align-items-center">
+                   
+                   <button class="btn btn-secondary" onclick="document.getElementById('contact-modal').style.display='flex'">Contact Me</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="mt-6" id="home">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-9 col-lg-8 col-xl-5">
+                        <img src="/shacc.png" alt="Shalom Chidi-Azuwike's profile" class="profile-photo img-fluid">
+                        <br>
+                        <h1 class="display-3 lh-sm">Hello YOU, I'm Shalom 🤗</h1>
+                      
+                    </div>
+                    <div class="col-md-9 col-xl-5">
+                        <p class="fs-2">I build innovative websites, systems, and data models. Skilled in project management, content creation, and graphic design.</p>
+                        <a href="/Shalom CV newerrr.pdf" class="btn btn-primary mt-3" download>Download CV <i class="fas fa-download"></i></a>
+                        <button class="btn btn-secondary mt-3 ms-2" onclick="window.scrollTo({top: document.getElementById('projects').offsetTop - 80, behavior: 'smooth'})">Explore My Work</button>
+                                <div class="px-xl-8 px-md-7">
+            <hr class="mt-7 text-1000" />
+        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Dashboard Image (Portfolio Overview) -->
+        <section>
+            <div class="container website-emulator">
+                <a href="https://shalomeberechidi-azuwike.netlify.app "><img class="img-fluid ashl" src="/shalom porto.png" alt="Portfolio Overview" /></a>
+                <br>
+            
+                <br>
+                <h2>See my Old Portfolio. Aww🥺</h2>
+            </div>
+        </section>
+
+        <!-- Trusted Brands -->
+        <section>
+    <div class="container">
+                <div class="px-xl-8 px-md-7">
+            <hr class="mt-7 text-1000" />
+        </div>
+        <br />
+        <br />
+        <div class="row mx-md-5 px-md-5 d-flex justify-content-evenly align-items-center">
+        <h1 class="display-6 fw-semi-bold"> I'm affiliated with:</h1>
+            <div class="col-4 col-lg-auto mt-5 mt-lg-0 text-center">
+
+                <img src="/public/assets/img/gallery/brands/ieee.png" alt="IEEE logo" class="brand-logo ieee-logo" style="height:30px;" />
+                </div>
+            <div class="col-4 col-lg-auto mt-5 mt-lg-0 text-center">
+                <img src="assets/img/gallery/brands/samsung.png" alt="Samsung logo" class="brand-logo samsung-logo" style="height:30px;" />
+            </div>
+            <div class="col-4 col-lg-auto mt-5 mt-lg-0 text-center">
+                <img src="assets/img/gallery/brands/cisco.png" alt="Cisco logo" class="brand-logo cisco-logo" style="height:30px;" />
+            </div>
+            
+            <div class="col-4 col-lg-auto mt-5 mt-lg-0 text-center">
+             <img src="assets/img/gallery/brands/googlee.png" alt="Google logo" class="brand-logo" style="height:30px;" />
+            </div>
+            <div class="col-4 col-lg-auto mt-5 mt-lg-0 text-center">
+             <img src="assets/img/gallery/brands/microsoft.png" alt="Microsoft logo" class="brand-logo" style="height:30px;" />
+            </div>
+            <div class="col-4 col-lg-auto mt-5 mt-lg-0 text-center">
+                <img src="assets/img/gallery/brands/amazon.png" alt="Amazon logo" class="brand-logo" style="height:30px;" />
+            </div>
+        </div>
+        <div class="px-xl-8 px-md-7">
+            <hr class="mt-7 text-1000" />
+        </div>
+    </div>
+</section>
+
+        <!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+        <h1 class="display-6 fw-semi-bold">Skills & Expertise</h1>
+        <p class="fs-2">My technical and creative toolkit for innovative solutions.</p>
+        <div class="row mb-4 mt-6">
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-node-js fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Node.js</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-sass fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">SCSS</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-bootstrap fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Bootstrap</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-js fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">JavaScript</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-python fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Python</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-book fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Jupyter Notebooks</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-code fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">VS Code</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-code fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Pycharm</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-file build smart, fun websites and AI tools with Node.js, Python, and Web3—plus I make content that pops! 🚀
+
+cel fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Google Docs</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-database fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">MySQL</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-cloud fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Microsoft 365</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-ethereum fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Web3</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fas fa-pen fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">Writing</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+                <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+                    <i class="fab fa-tiktok fa-2x" aria-hidden="true"></i>
+                    <h5 class="pt-3 mb-0">TikTok</h5>
+                </div>
+            </div>
+            <div class="col-4 mb-4">
+    <div class="border rounded-1 border-700 h-100 features-items d-flex flex-column align-items-center justify-content-center text-center p-4">
+        <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+        <h5 class="pt-3 mb-0">Github</h5>
+    </div>
+</div>
+        </div>
+        <div class="px-xl-8 px-md-7">
+            <hr class="mt-7 text-1000" />
+        </div>
+        <div class="text-center">
+            <p class="fs-2"></p>
+        </div>
+    </div>
+</section>
+
+        <!-- CTA Section -->
+        <section class="mt-5">
+  <div class="container">
+    <div class="text-center">
+      <div class="p-5 rounded-3 text-white" style="background: transparent;">
+        <div class="py-3">
+<h1 class="display-6 fw-semi-bold">Got a Big Idea?</h1>
+<h4 class="opacity-50 ls-2 lh-base fw-medium text-white">Let’s Build Something Amazing Together</h4>
+        </div>
+        <div class="flex-center d-flex">
+          <button 
+            class="btn text-white" 
+            style="background-color: #4f46e5; border: none;"
+            onmouseover="this.style.backgroundColor='#<ff6b00></ff6b00>'" 
+            onmouseout="this.style.backgroundColor='#4f46e5'"
+            onclick="document.getElementById('contact-modal').style.display='flex'"
+          >
+            Connect with Me <i class="fas fa-arrow-right" style="color: #ffa94d;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Experience Section -->
+        <section class="mt-5" id="experience">
+            <div class="container">
+                <div class="text-center">
+                    <p class="fs-2 ls-2">EXPERIENCE</p>
+                    <h1 class="display-6 fw-semi-bold">Professional Experience</h1>
+                </div>
+                <div class="row mt-6">
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">CEO, Kabary Software</h3>
+                                <p class="fs-xl-1 ls-3">2019 - Present</p>
+                                <p>Led development of innovative software solutions, including websites and apps like Bizvest and Janessa AI.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Microsoft Learn Student Ambassador</h3>
+                                <p class="fs-xl-1 ls-3">2023 - Present</p>
+                                <p>Advocating for digital skills and empowering students with tech education. Organizing workshops on AI and cloud computing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Student Brand Ambassador, Samsung Mobile</h3>
+                                <p class="fs-xl-1 ls-3">Nov 2024 - Present</p>
+                                <p>Promoting Samsung’s mobile technologies in a hybrid capacity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Secretary, IEEE FUTO Student Branch</h3>
+                                <p class="fs-xl-1 ls-3">Feb 2025 - May 2025</p>
+                                <p>Organized events and promoted humanitarian technology initiatives in a hybrid role.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Field Intern, Eauxwell Nigeria Limited</h3>
+                                <p class="fs-xl-1 ls-3">Mar 2025 - May 2025</p>
+                                <p>Contributed to renewable energy projects at STEM Plot 5, FUTO, focusing on sustainable solutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="mt-5" id="education">
+            <div class="container">
+                <div class="text-center">
+                    <p class="fs-2 ls-2">EDUCATION</p>
+                    <h1 class="display-6 fw-semi-bold">Academic Background</h1>
+                </div>
+                <div class="row mt-6">
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">B.Eng in Software Engineering</h3>
+                                <p class="fs-xl-1 ls-3">Federal University of Technology, Owerri (2021 - Present)</p>
+                                <p>Focused on coding and empowering women in tech. Coursework: Data Structures, Machine Learning, Web Technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Secondary Education</h3>
+                                <p class="fs-xl-1 ls-3">Federal Government Girls' College, Owerri (2015 - 2021)</p>
+                                <p>Commonwealth Club member, representing New Zealand.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Get Connected</h3>
+                                <p class="fs-xl-1 ls-3">Cisco Networking Academy (Feb 2020)</p>
+                                <p>Introduction to digital literacy and networking basics.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Introduction to Programming Using Python</h3>
+                                <p class="fs-xl-1 ls-3">Cisco Networking Academy (Mar 2024)</p>
+                                <p>Foundational programming skills in Python.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">DSEP Web Development Course</h3>
+                                <p class="fs-xl-1 ls-3">CSAAE (May 2024)</p>
+                                <p>Training in modern web development techniques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Authored Section -->
+        <section class="mt-5" id="books">
+            <div class="container">
+                <div class="text-center">
+                    <p class="fs-2 ls-2">BOOKS AUTHORED</p>
+                    <h1 class="display-6 fw-semi-bold">Published Works</h1>
+                </div>
+                <div class="row mt-6">
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">The Billionaire's Son</h3>
+                                <p class="fs-xl-1 ls-3">Authored by Jaime Cabary</p>
+                                <p>A captivating story blending wealth, ambition, and personal growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="border rounded-1 border-700 h-100">
+                            <div class="p-5">
+                                <h3 class="fs-xl-7 fs-lg-4 fs-md-3">Caught in Between</h3>
+                                <p class="fs-xl-1 ls-3">Authored by Jaime Cabary</p>
+                                <p>An engaging narrative exploring complex relationships and choices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work & Projects Section -->
+       <section class="mt-5" id="projects">
+    <div class="container">
+        <div class="text-center">
+            <p class="fs-2 ls-2">PORTFOLIO</p>
+            <h1 class="display-6 fw-semi-bold">My Work & Projects</h1>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 phone-emulator">
+                <img class="w-100" src="/cabondo.png" alt="Kabary Software" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Kabary Software</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">Led development of innovative software solutions as CEO since 2019.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal1').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 phone-emulator">
+                <img class="w-100" src="/mlsa.png" alt="Microsoft Learn" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Microsoft Learn</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">Promoted tech education as a Student Ambassador since 2020.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal2').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/janessa.png" alt="Janessa AI" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Janessa AI</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">Developed an AI-powered chatbot for enhanced user interaction.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal6').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 ">
+                <img class="w-100" src="/mars1.png" alt="MarsoVerse" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">MarsoVerse</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A game inspired by interplanetary exploration with immersive storytelling.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal7').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 phone-emulator">
+                <img class="w-100" src="/scdas.png" alt="ScriptureDash" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">ScriptureDash</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A Bible app designed like Duolingo, gamifying scripture learning.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal8').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 phone-emulator">
+                <img class="w-100" src="/PhantomzCompanyEmployees.png" alt="Phantomzcollectionx App" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Phantomzcollectionx App</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A mobile app empowering small businesses with management tools.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal10').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 phone-emulator">
+                <img class="w-100" src="/franweather.png" alt="Weather App" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Weather App</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A user-friendly app providing real-time weather updates.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal14').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 phone-emulator">
+                <img class="w-100" src="/gps.png" alt="Maryann GPS App" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Maryann GPS App</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A navigation app offering precise location tracking.</p>
+                <button class="btn btn-primary mt-3" onclick="document.getElementById('modal11').style.display='flex'">View Details</button>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/keedceejaye.png" alt="KeedCeeJaye" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">KeedCeeJaye</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A dynamic website showcasing creative content and tech innovations.</p>
+                <a href="https://keedceejaye.netlify.app/" class="btn Blanchor btn btn-primary mt-3">Visit Site</a>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/phan.png" alt="Phantomzcollectionx" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Phantomzcollectionx</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">An E-commerce platform with a modern shopping experience.</p>
+                <a href="https://phantomzcollectionx.vercel.app" class="btn btn-primary mt-3">Visit Site</a>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/nganet.png" alt="Nigeria Net" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Nigeria Net</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A NITDA event website at FUTO, my first responsive site.</p>
+                <a href="https://nigerianet.netlify.app/" class="btn btn-primary mt-3">Visit Site</a>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/oldport.png" alt="Shalom's Old Portfolio" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Shalom's Old Portfolio</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">My previous portfolio showcasing earlier work.</p>
+                <a href="https://shalomchidi-azuwike.netlify.app/" class="btn btn-primary mt-3">Visit Site</a>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/fake caution screen.png" alt="Fake Caution Site" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Fake Caution Site</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A creative project to ward off intruders with a caution screen.</p>
+                <a href="https://fakecautionwebsite.netlify.app" class="btn btn-primary mt-3">Visit Site</a>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/shacabondo.png" alt="Shacabondo " />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Shacabondo</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">My first website ever, a milestone in my tech journey.</p>
+                <a href="https://shacabondo.netlify.app/welcome%20page/index.html" class="btn btn-primary mt-3">Visit Site</a>
+            </div>
+        </div>
+        <div class="row mt-6 flex-center justify-content-xl-evenly px-xl-5">
+            <div class="col-md-7 col-lg-6 order-md-1 website-emulator">
+                <img class="w-100" src="/sashassashaydes.png" alt="Sasha’s Sashaydes" />
+            </div>
+            <div class="col-md-5 col-lg-4">
+                <h3 class="fs-xl-7 fs-lg-4 fs-md-3 mt-5 mt-md-0">Sasha’s Sashaydes</h3>
+                <p class="fs-xl-1 ls-3 pe-xl-2">A personal blog sharing my journey in tech and creative writing.</p>
+                <a href="https://sashassashaydes.blogspot.com" class="btn btn-primary mt-3">Visit Blog</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Project Modals -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal1').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Kabary Software</h3>
+                <p>Led development of innovative software solutions, including websites and apps like Bizvest and Janessa AI.</p>
+                <div class="row">
+                    <div class="col-md-4"><img class="w-100" src="keedceejaye.png" alt="KeedCeeJaye" /></div>
+                    <div class="col-md-4"><img class="w-100" src="janessa.png" alt="Janessa AI" /></div>
+                    <div class="col-md-4"><img class="w-100" src="marso.png" alt="MarsoVerse" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal2').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Microsoft Learn</h3>
+                <p>Advocating for digital skills and empowering students with tech education.</p>
+                <div class="row">
+                    <div class="col-md-4"><img class="w-100" src="mlsa.png" alt="Event 1" /></div>
+                    <div class="col-md-4"><img class="w-100" src="ieee.png" alt="Event 2" /></div>
+                    <div class="col-md-4"><img class="w-100" src="phan.png" alt="Event 3" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal6" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal6').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Janessa AI</h3>
+                <p>An AI-powered chatbot enhancing user interactions through natural language processing.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="janessa.png" alt="Janessa AI" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal7" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal7').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>MarsoVerse</h3>
+                <p>A game inspired by interplanetary exploration, featuring immersive storytelling and graphics.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="mars1.png" alt="MarsoVerse" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal8" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal8').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>ScriptureDash</h3>
+                <p>A Bible app designed like Duolingo, gamifying scripture learning with interactive features.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="scdas.png" alt="ScriptureDash" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal10" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal10').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Phantomzcollectionx App</h3>
+                <p>A mobile app empowering small businesses with management tools and analytics.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="PhantomzCompanyEmployees.png" alt="Phantomzcollectionx App" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal11" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal11').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Maryann GPS App</h3>
+                <p>A navigation app offering precise location tracking and user-friendly interface.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="gps.png" alt="Maryann GPS App" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal14" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal14').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Weather App</h3>
+                <p>A user-friendly app providing real-time weather updates with a clean design.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="franweather.png" alt="Weather App" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal16" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal16').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Fake Caution Screen</h3>
+                <p>A creative project to ward off intruders with a caution screen interface.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="fake caution screen.png" alt="Fake Caution Screen" /></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal18" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('modal18').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>shacabondo.com</h3>
+                <p>My first website, marking a milestone in my tech journey with a simple yet functional design.</p>
+                <div class="row">
+                    <div class="col-md-12"><img class="w-100" src="shacabondo.png" alt="shacabondo.com" /></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Modal -->
+        <div id="contact-modal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close" onclick="document.getElementById('contact-modal').style.display='none'"><i class="fas fa-times"></i></button>
+                <h3>Contact Me</h3>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                    <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                    <textarea id="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="button" class="btn btn-success mt-3" onclick="window.open('https://wa.me/+2348030918738', '_blank')">Contact via WhatsApp</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <p>Connect with me on social media:</p>
+                <a href="https://x.com/shalomcabondo" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://linkedin.com/in/shalom-chidi-azuwike" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/shalomcabondo" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://sashassahaydes.blogspot.com" target="_blank"><i class="fas fa-blog"></i></a>
+                <p class="mt-3">&copy; 2025 Shalom Chidi-Azuwike. All rights reserved.</p>
+            </div>
+        </footer>
+        <div class="scroll-buttons fixed-bottom d-flex flex-column align-items-end p-3">
+    <button class="btn btn-primary mb-2 scroll-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button class="btn btn-primary scroll-btn" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'})" aria-label="Scroll to bottom">
+        <i class="fas fa-arrow-down"></i>
+    </button>
+</div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.0.3/dist/email.min.js"></script>
+    <script src="vendors/swiper/swiper-bundle.min.js"></script>
+    <script src="vendors/is/is.min.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/4Zi7k1OSh1zE+/W8S6yUq7O4q1T3sG/4OWf8+Af5v0Hgya3Y6/0vYgV5aL6cQ/0vYgV5aL6cQ/0vYgV5aL6cQ==" crossorigin="anonymous"></script>
+    <script>
+        // EmailJS Initialization
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+
+        // Contact Form Submission
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            })
+            .then(function(response) {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset();
+                document.getElementById('contact-modal').style.display = 'none';
+            }, function(error) {
+                alert('Failed to send message. Please try again.');
+                console.error('EmailJS error:', error);
+            });
+        });
+
+        // Modal Close on Outside Click
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
