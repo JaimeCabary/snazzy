@@ -867,7 +867,7 @@ cel fa-2x" aria-hidden="true"></i>
 </section>
 
         <!-- Project Modals -->
-        <div id="modal1" class="modal">
+        <div id="contact-modal" class="modal">
             <div class="modal-content">
                 <button class="modal-close" onclick="document.getElementById('modal1').style.display='none'"><i class="fas fa-times"></i></button>
                 <h3>Kabary Software</h3>
@@ -1018,12 +1018,12 @@ cel fa-2x" aria-hidden="true"></i>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/4Zi7k1OSh1zE+/W8S6yUq7O4q1T3sG/4OWf8+Af5v0Hgya3Y6/0vYgV5aL6cQ/0vYgV5aL6cQ/0vYgV5aL6cQ==" crossorigin="anonymous"></script>
     <script>
   // EmailJS Initialization
-  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+  emailjs.init("k0uUXaq0mwV0gHNCX"); // Replace with your actual EmailJS public key
 
   // Contact Form Submission
   document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    emailjs.send(name, message, {
       from_name: document.getElementById('name').value,
       from_email: document.getElementById('email').value,
       message: document.getElementById('message').value
@@ -1068,5 +1068,32 @@ cel fa-2x" aria-hidden="true"></i>
       "knowsAbout": ["Artificial Intelligence", "Web Development", "Storytelling", "Open Source", "Women in STEM"]
     }
   </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Shalzepta",
+  "url": "https://shalzepta.netlify.app",
+  "logo": "https://shalzepta.netlify.app/shacc.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Shalom Chidi-Azuwike"
+  },
+  "sameAs": [
+    "https://linkedin.com/in/shalom-chidi-azuwike",
+    "https://github.com/JaimeCabary",
+    "https://sashassahaydes.blogspot.com"
+  ],
+  "description": "Shalzepta is the official brand and personal tech portfolio of Shalom Chidi-Azuwike — software engineering student, writer, and AI/Web3 enthusiast.",
+  "location": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "NG"
+    }
+  }
+}
+</script>
+
 </body>
   </html>
